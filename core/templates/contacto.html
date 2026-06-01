@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Formulario de Contacto</h2>
+
+    {% if exito %}
+        <p style="color: green; font-weight: bold;">¡El formulario se envió correctamente!</p>
+    {% endif %}
+
+    <form method="POST" novalidate>
+        {% csrf_token %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" style="margin-top: 10px;">Enviar Mensaje</button>
+    </form>
+{% endblock %}
